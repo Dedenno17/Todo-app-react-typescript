@@ -1,4 +1,23 @@
 import Button from "../UI/Button";
+import TodoItem from "../TodoItem/TodoItem";
+
+interface todo {
+  id: string;
+  title: string;
+}
+
+let todos: todo[];
+
+todos = [
+  {
+    id: (Math.random() + 1).toString(),
+    title: "Learn React",
+  },
+  {
+    id: (Math.random() + 1).toString(),
+    title: "Learn TypeScript",
+  },
+];
 
 function TodoList() {
   return (
@@ -17,7 +36,11 @@ function TodoList() {
           Todo
         </Button>
       </div>
-      <ul></ul>
+      <ul className="w-full pt-4">
+        {todos.map((todo) => (
+          <TodoItem key={todo.id} id={todo.id} title={todo.title} />
+        ))}
+      </ul>
     </div>
   );
 }
