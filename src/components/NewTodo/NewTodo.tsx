@@ -23,6 +23,7 @@ function NewTodo() {
     };
 
     dispatch(todosActions.addTodo(newTodo));
+    inputRef.current!.value = "";
   };
 
   return (
