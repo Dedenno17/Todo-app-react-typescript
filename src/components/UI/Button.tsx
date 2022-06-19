@@ -11,7 +11,7 @@ const Button: React.FC<BaseLayoutProps> = (props) => {
     <button
       type={props.type}
       onClick={props.onClick}
-      className="py-2 px-8 bg-primaryBlue rounded-sm text-white font-semibold text-md outline-none"
+      className=" w-[30%] py-2 flex justify-center items-center bg-primaryBlue rounded-sm text-white font-semibold text-md outline-none"
     >
       {props.children}
     </button>
