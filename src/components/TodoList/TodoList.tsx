@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useAppSelector } from "../../app/hooks";
 
 import Button from "../UI/Button";
@@ -9,6 +9,10 @@ function TodoList() {
   const todos = useAppSelector((state) => state.todos.value);
 
   const [enteredTodos, setEnteredTodos] = useState<Todos[]>(todos);
+
+  useEffect(() => {
+    setEnteredTodos(todos);
+  }, [todos]);
 
   const showAllHandler = () => {
     setEnteredTodos(todos);
@@ -27,6 +31,8 @@ function TodoList() {
     );
     setEnteredTodos(newTodos);
   };
+
+  console.log(todos);
 
   return (
     <div className="w-full mt-5 p-2">

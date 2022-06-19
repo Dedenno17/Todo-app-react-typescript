@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import React, { useRef } from "react";
 import { useAppDispatch } from "../../app/hooks";
 
 import { todosActions } from "../../features/todos";
@@ -10,7 +10,9 @@ function NewTodo() {
 
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const addTodoHandler = () => {
+  const addTodoHandler = (event: React.FormEvent) => {
+    event.preventDefault();
+
     const id = (Math.random() + 1).toString();
     const enteredTodo = inputRef.current!.value;
 
