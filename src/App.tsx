@@ -1,6 +1,7 @@
 import React from "react";
 
 import NewTodo from "./components/NewTodo/NewTodo";
+import TodoList from "./components/TodoList/TodoList";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
         Todo App
       </h1>
       <NewTodo />
+      <TodoList />
     </div>
   );
 }
