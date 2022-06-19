@@ -2,6 +2,7 @@ import React from "react";
 
 import pen from "../../assets/pen-solid.svg";
 import trash from "../../assets/trash-solid.svg";
+import check from "../../assets/check-solid.svg";
 
 const TodoItem: React.FC<{ title: string; id: string }> = (props) => {
   return (
@@ -13,9 +14,21 @@ const TodoItem: React.FC<{ title: string; id: string }> = (props) => {
         <p className="text-lg font-semibold text-slate-700">{props.title}</p>
       </div>
       <div className="w-[30%] h-full flex justify-between items-center">
-        <input type="checkbox" className="w-5 h-5" />
-        <img src={pen} alt="pen" className="w-[22%] h-full" />
-        <img src={trash} alt="trash" className="w-[22%] h-full" />
+        <div className="w-5 h-5 relative border-[1px] border-slate-700">
+          <div className="w-full h-full">
+            <img
+              src={check}
+              alt="check"
+              className="w-full h-full filter-green"
+            />
+          </div>
+          <input
+            type="checkbox"
+            className="w-5 h-5 absolute top-0 left-0 opacity-0"
+          />
+        </div>
+        <img src={pen} alt="pen" className="w-[22%] h-full filter-orange" />
+        <img src={trash} alt="trash" className="w-[22%] h-full filter-red" />
       </div>
     </li>
   );
