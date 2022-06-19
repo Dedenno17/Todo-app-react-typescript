@@ -1,25 +1,10 @@
 import Button from "../UI/Button";
 import TodoItem from "../TodoItem/TodoItem";
-
-interface todo {
-  id: string;
-  title: string;
-}
-
-let todos: todo[];
-
-todos = [
-  {
-    id: (Math.random() + 1).toString(),
-    title: "Learn React",
-  },
-  {
-    id: (Math.random() + 1).toString(),
-    title: "Learn TypeScript",
-  },
-];
+import { useAppSelector } from "../../app/hooks";
 
 function TodoList() {
+  const todos = useAppSelector((state) => state.todos.value);
+
   return (
     <div className="w-full mt-5 p-2">
       <h2 className="text-center text-xl font-bold text-slate-700 font-sans">
