@@ -1,10 +1,18 @@
 import React from "react";
+import { useAppDispatch } from "../../app/hooks";
 
+import { todosActions } from "../../features/todos";
 import pen from "../../assets/pen-solid.svg";
 import trash from "../../assets/trash-solid.svg";
 import check from "../../assets/check-solid.svg";
 
 const TodoItem: React.FC<{ title: string; id: string }> = (props) => {
+  const dispatch = useAppDispatch();
+
+  const removeTodoHandler = () => {
+    dispatch(todosActions.removeTodo(props.id));
+  };
+
   return (
     <li
       id={props.id}
@@ -28,7 +36,12 @@ const TodoItem: React.FC<{ title: string; id: string }> = (props) => {
           />
         </div>
         <img src={pen} alt="pen" className="w-[22%] h-full filter-orange" />
-        <img src={trash} alt="trash" className="w-[22%] h-full filter-red" />
+        <img
+          src={trash}
+          alt="trash"
+          className="w-[22%] h-full filter-red"
+          onClick={removeTodoHandler}
+        />
       </div>
     </li>
   );
