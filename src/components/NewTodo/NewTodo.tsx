@@ -3,7 +3,7 @@ import { useAppDispatch } from "../../app/hooks";
 
 import { todosActions } from "../../features/todos";
 import book from "../../assets/book-solid.svg";
-import { Todos } from "../../features/todos";
+import Todos from "../../models/Todos";
 
 function NewTodo() {
   const dispatch = useAppDispatch();
@@ -13,14 +13,9 @@ function NewTodo() {
   const addTodoHandler = (event: React.FormEvent) => {
     event.preventDefault();
 
-    const id = (Math.random() + 1).toString();
     const enteredTodo = inputRef.current!.value;
 
-    const newTodo: Todos = {
-      id,
-      title: enteredTodo,
-      isDone: false,
-    };
+    const newTodo: Todos = new Todos(enteredTodo, false);
 
     dispatch(todosActions.addTodo(newTodo));
     inputRef.current!.value = "";

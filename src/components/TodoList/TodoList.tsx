@@ -3,7 +3,7 @@ import { useAppSelector } from "../../app/hooks";
 
 import Button from "../UI/Button";
 import TodoItem from "../TodoItem/TodoItem";
-import { Todos } from "../../features/todos";
+import Todos from "../../models/Todos";
 
 function TodoList() {
   const todos = useAppSelector((state) => state.todos.value);

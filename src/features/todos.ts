@@ -1,11 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../app/store";
 
-interface Todos {
-  id: string;
-  title: string;
-  isDone: boolean;
-}
+import Todos from "../models/Todos";
 
 interface TodosState {
   value: Todos[];
@@ -38,5 +34,3 @@ export const todosActions = todosSlice.actions;
 export const selectTod = (state: RootState) => state.todos.value;
 
 export default todosSlice.reducer;
-
-export type { Todos };
