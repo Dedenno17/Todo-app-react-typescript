@@ -13,9 +13,16 @@ function NewTodo() {
   const addTodoHandler = (event: React.FormEvent) => {
     event.preventDefault();
 
+    const id = (Math.random() + 1).toString();
     const enteredTodo = inputRef.current!.value;
 
-    const newTodo: Todos = new Todos(enteredTodo, false);
+    const newTodo: Todos = {
+      id,
+      title: enteredTodo,
+      isDone: false,
+    };
+
+    console.log(newTodo);
 
     dispatch(todosActions.addTodo(newTodo));
     inputRef.current!.value = "";
