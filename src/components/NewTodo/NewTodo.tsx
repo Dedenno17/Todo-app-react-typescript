@@ -22,8 +22,6 @@ function NewTodo() {
       isDone: false,
     };
 
-    console.log(newTodo);
-
     dispatch(todosActions.addTodo(newTodo));
     inputRef.current!.value = "";
   };

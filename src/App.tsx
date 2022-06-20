@@ -1,4 +1,5 @@
 import React from "react";
+import EditTodo from "./components/EditTodo/EditTodo";
 
 import NewTodo from "./components/NewTodo/NewTodo";
 import TodoList from "./components/TodoList/TodoList";
@@ -11,6 +12,7 @@ function App() {
       </h1>
       <NewTodo />
       <TodoList />
+      <EditTodo />
     </div>
   );
 }
