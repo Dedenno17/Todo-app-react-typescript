@@ -8,12 +8,12 @@ interface BaseLayout {
 
 const ModalOverlay: React.FC = () => {
   return (
-    <div className="fixed top-0 left-0 bottom-0 bg-gradient-to-b from-slate-800 to-transparent" />
+    <div className="fixed top-0 left-0 bottom-0 right-0 bg-gradient-to-b from-slate-800 to-transparent" />
   );
 };
 
 const ModalContent: React.FC<BaseLayout> = (props) => {
-  const classes = `${props.className} fixed w-3/4 top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 bg-slate-100 rounded-lg shadow-lg`;
+  const classes = `${props.className} fixed w-3/4 top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 bg-white rounded-lg shadow-lg`;
 
   return <div className={classes}>{props.children}</div>;
 };

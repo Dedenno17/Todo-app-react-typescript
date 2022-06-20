@@ -11,7 +11,7 @@ const EditTodo: React.FC = (props) => {
       <div className="w-full h-[35%]">
         <input
           type="text"
-          className="w-full h-7 border-[1px] bg-slate-100 border-slate-700 rounded-sm py-3 px-5"
+          className="w-full h-7 border-[1px] bg-white border-slate-700 rounded-sm py-3 px-5"
         />
       </div>
       <div className="w-full h-[35%] flex justify-end items-center">
