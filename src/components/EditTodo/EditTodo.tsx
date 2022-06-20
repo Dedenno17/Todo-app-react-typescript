@@ -1,9 +1,17 @@
 import React from "react";
+import { useAppDispatch } from "../../app/hooks";
 
+import { showEditActions } from "../../features/isShowEdit";
 import Modal from "../UI/Modal";
 import Button from "../UI/Button";
 
 const EditTodo: React.FC = (props) => {
+  const dispatch = useAppDispatch();
+
+  const cancelHandler = () => {
+    dispatch(showEditActions.setShowEdit());
+  };
+
   return (
     <Modal className="p-3 h-40 flex flex-col justify-evenly items-center">
       <h2 className="text-xl font-semibold font-sans text-slate-700 mb-2">
@@ -18,7 +26,7 @@ const EditTodo: React.FC = (props) => {
       <div className="w-full h-[35%] flex justify-end items-center">
         <Button
           type="button"
-          onClick={() => {}}
+          onClick={cancelHandler}
           className="w-[30%] py-1 border-[1px] border-primaryBlue bg-white text-primaryBlue"
         >
           Cancel
