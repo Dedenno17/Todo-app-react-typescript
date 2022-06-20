@@ -26,6 +26,13 @@ export const todosSlice = createSlice({
       );
       state.value = newState;
     },
+    editTodo: (
+      state,
+      action: PayloadAction<{ id: string; newTitle: string }>
+    ) => {
+      const oldTodo = state.value.find((todo) => todo.id === action.payload.id);
+      oldTodo!.title = action.payload.newTitle;
+    },
   },
 });
 
