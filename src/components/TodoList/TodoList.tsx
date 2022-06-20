@@ -38,13 +38,25 @@ function TodoList() {
         TodoList
       </h2>
       <div className="flex justify-between items-center mt-3">
-        <Button type="button" onClick={showAllHandler}>
+        <Button
+          type="button"
+          onClick={showAllHandler}
+          className="w-[30%] py-2 bg-primaryBlue text-white"
+        >
           All
         </Button>
-        <Button type="button" onClick={showDoneHandler}>
+        <Button
+          type="button"
+          onClick={showDoneHandler}
+          className="w-[30%] py-2 bg-primaryBlue text-white"
+        >
           Done
         </Button>
-        <Button type="button" onClick={showNotDoneYetHandler}>
+        <Button
+          type="button"
+          onClick={showNotDoneYetHandler}
+          className="w-[30%] py-2 bg-primaryBlue text-white"
+        >
           Todo
         </Button>
       </div>
