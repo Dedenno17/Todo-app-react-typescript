@@ -33,6 +33,10 @@ export const todosSlice = createSlice({
       const oldTodo = state.value.find((todo) => todo.id === action.payload.id);
       oldTodo!.title = action.payload.newTitle;
     },
+    checkTodo: (state, action: PayloadAction<string>) => {
+      const oldTodo = state.value.find((todo) => todo.id === action.payload);
+      oldTodo!.isDone = true;
+    },
   },
 });
 

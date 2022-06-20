@@ -62,7 +62,12 @@ function TodoList() {
       </div>
       <ul className="w-full pt-4">
         {enteredTodos.map((todo) => (
-          <TodoItem key={todo.id} id={todo.id} title={todo.title} />
+          <TodoItem
+            key={todo.id}
+            id={todo.id}
+            title={todo.title}
+            isDone={todo.isDone}
+          />
         ))}
       </ul>
     </div>
