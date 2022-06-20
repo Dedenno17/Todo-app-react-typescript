@@ -2,6 +2,7 @@ import React from "react";
 import { useAppDispatch } from "../../app/hooks";
 
 import { todosActions } from "../../features/todos";
+import { showEditActions } from "../../features/isShowEdit";
 import pen from "../../assets/pen-solid.svg";
 import trash from "../../assets/trash-solid.svg";
 import check from "../../assets/check-solid.svg";
@@ -11,6 +12,10 @@ const TodoItem: React.FC<{ title: string; id: string }> = (props) => {
 
   const removeTodoHandler = () => {
     dispatch(todosActions.removeTodo(props.id));
+  };
+
+  const editTodoHandler = () => {
+    dispatch(showEditActions.setShowEdit());
   };
 
   return (
@@ -35,7 +40,12 @@ const TodoItem: React.FC<{ title: string; id: string }> = (props) => {
             className="w-5 h-5 absolute top-0 left-0 opacity-0"
           />
         </div>
-        <img src={pen} alt="pen" className="w-[22%] h-full filter-orange" />
+        <img
+          src={pen}
+          alt="pen"
+          className="w-[22%] h-full filter-orange"
+          onClick={editTodoHandler}
+        />
         <img
           src={trash}
           alt="trash"
