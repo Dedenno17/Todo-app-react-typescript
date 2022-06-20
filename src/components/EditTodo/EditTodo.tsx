@@ -1,6 +1,7 @@
 import React from "react";
 
 import Modal from "../UI/Modal";
+import Button from "../UI/Button";
 
 const EditTodo: React.FC = (props) => {
   return (
@@ -11,12 +12,24 @@ const EditTodo: React.FC = (props) => {
       <div className="w-full h-[35%]">
         <input
           type="text"
-          className="w-full h-7 border-[1px] bg-white border-slate-700 rounded-sm py-3 px-5"
+          className="w-full h-8 border-[1px] bg-white border-slate-700 rounded-sm py-3 px-5"
         />
       </div>
       <div className="w-full h-[35%] flex justify-end items-center">
-        <button type="button">Cancel</button>
-        <button type="button">Confirm</button>
+        <Button
+          type="button"
+          onClick={() => {}}
+          className="w-[30%] py-1 border-[1px] border-primaryBlue bg-white text-primaryBlue"
+        >
+          Cancel
+        </Button>
+        <Button
+          type="button"
+          onClick={() => {}}
+          className="w-[30%] py-1 bg-primaryBlue ml-3 text-white"
+        >
+          Confirm
+        </Button>
       </div>
     </Modal>
   );
