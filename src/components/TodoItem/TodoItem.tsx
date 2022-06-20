@@ -15,7 +15,13 @@ const TodoItem: React.FC<{ title: string; id: string }> = (props) => {
   };
 
   const editTodoHandler = () => {
-    dispatch(showEditActions.setShowEdit());
+    dispatch(
+      showEditActions.setShowEdit({
+        idTodo: props.id,
+        titleTodo: props.title,
+        isShow: true,
+      })
+    );
   };
 
   return (

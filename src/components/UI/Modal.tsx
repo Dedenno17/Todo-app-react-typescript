@@ -15,7 +15,7 @@ const ModalOverlay: React.FC = () => {
   return (
     <div
       className="fixed top-0 left-0 bottom-0 right-0 bg-gradient-to-b from-slate-800 to-transparent"
-      onClick={() => dispatch(showEditActions.setShowEdit())}
+      onClick={() => dispatch(showEditActions.setCloseEdit())}
     />
   );
 };

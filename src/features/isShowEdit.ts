@@ -1,20 +1,35 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../app/store";
 
+interface toEdit {
+  idTodo: string;
+  titleTodo: string;
+  isShow: boolean;
+}
+
 interface isShowEdit {
-  value: boolean;
+  value: toEdit;
 }
 
 const initialStateValue: isShowEdit = {
-  value: false,
+  value: {
+    idTodo: "",
+    titleTodo: "",
+    isShow: false,
+  },
 };
 
 export const showEditSlice = createSlice({
   name: "showEdit",
   initialState: initialStateValue,
   reducers: {
-    setShowEdit: (state) => {
-      state.value = !state.value;
+    setShowEdit: (state, action: PayloadAction<toEdit>) => {
+      state.value.idTodo = action.payload.idTodo;
+      state.value.titleTodo = action.payload.titleTodo;
+      state.value.isShow = action.payload.isShow;
+    },
+    setCloseEdit: (state) => {
+      state.value.isShow = false;
     },
   },
 });

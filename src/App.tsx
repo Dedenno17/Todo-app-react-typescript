@@ -15,7 +15,7 @@ function App() {
       </h1>
       <NewTodo />
       <TodoList />
-      {isShowEdit && <EditTodo />}
+      {isShowEdit.isShow && <EditTodo />}
     </div>
   );
 }
