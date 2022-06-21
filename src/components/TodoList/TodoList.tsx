@@ -19,16 +19,12 @@ function TodoList() {
   };
 
   const showDoneHandler = () => {
-    const newTodos: Todos[] = enteredTodos.filter(
-      (todo) => todo.isDone === true
-    );
+    const newTodos: Todos[] = todos.filter((todo) => todo.isDone === true);
     setEnteredTodos(newTodos);
   };
 
   const showNotDoneYetHandler = () => {
-    const newTodos: Todos[] = enteredTodos.filter(
-      (todo) => todo.isDone === false
-    );
+    const newTodos: Todos[] = todos.filter((todo) => todo.isDone === false);
     setEnteredTodos(newTodos);
   };
 
