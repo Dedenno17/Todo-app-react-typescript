@@ -47,8 +47,12 @@ const TodoItem: React.FC<{ title: string; id: string; isDone: boolean }> = (
         </p>
       </div>
       <div className="w-[30%] h-full flex justify-between items-center">
-        <div className="w-5 h-5 relative border-[1px] border-slate-700">
-          <div className="w-full h-full">
+        <div
+          className={`w-5 h-5 relative border-[1px] ${
+            props.isDone ? "border-green-500" : "border-slate-700"
+          } `}
+        >
+          <div className="w-full h-full ">
             <img
               src={check}
               alt="check"
@@ -66,7 +70,9 @@ const TodoItem: React.FC<{ title: string; id: string; isDone: boolean }> = (
         <img
           src={pen}
           alt="pen"
-          className="w-[22%] h-full filter-orange"
+          className={`w-[22%] h-full ${
+            props.isDone ? "filter-grey pointer-events-none" : "filter-orange"
+          } `}
           onClick={editTodoHandler}
         />
         <img

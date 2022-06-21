@@ -22,4 +22,9 @@
     filter: invert(29%) sepia(32%) saturate(4876%) hue-rotate(336deg)
       brightness(89%) contrast(90%);
   }
+
+  .filter-grey {
+    filter: invert(29%) sepia(3%) saturate(2876%) hue-rotate(190deg)
+      brightness(89%) contrast(89%);
+  }
 }
