@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useState, useRef } from "react";
 import { useAppDispatch } from "../../app/hooks";
 
 import { todosActions } from "../../features/todos";
@@ -9,12 +9,20 @@ function NewTodo() {
   const dispatch = useAppDispatch();
 
   const inputRef = useRef<HTMLInputElement>(null);
+  const [error, setError] = useState<boolean>(false);
 
   const addTodoHandler = (event: React.FormEvent) => {
     event.preventDefault();
 
     const id = (Math.random() + 1).toString();
     const enteredTodo = inputRef.current!.value;
+
+    if (enteredTodo.trim().length === 0) {
+      setError(true);
+      return;
+    }
+
+    setError(false);
 
     const newTodo: Todos = {
       id,
@@ -46,7 +54,9 @@ function NewTodo() {
           ref={inputRef}
           type="text"
           placeholder="New todo"
-          className="w-[85%] h-full p-2 border border-slate-400 rounded-r-sm outline-none block"
+          className={`w-[85%] h-full p-2 border rounded-r-sm outline-none block ${
+            error ? "border-red-500" : "border-slate-400"
+          }`}
         />
       </div>
       <div className="h-[30%] w-full">
