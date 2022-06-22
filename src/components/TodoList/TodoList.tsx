@@ -37,21 +37,21 @@ function TodoList() {
         <Button
           type="button"
           onClick={showAllHandler}
-          className="w-[30%] py-2 bg-primaryBlue text-white"
+          className="w-[30%] py-2 bg-primaryBlue text-white hover:brightness-90"
         >
           All
         </Button>
         <Button
           type="button"
           onClick={showDoneHandler}
-          className="w-[30%] py-2 bg-primaryBlue text-white"
+          className="w-[30%] py-2 bg-primaryBlue text-white hover:brightness-90"
         >
           Done
         </Button>
         <Button
           type="button"
           onClick={showNotDoneYetHandler}
-          className="w-[30%] py-2 bg-primaryBlue text-white"
+          className="w-[30%] py-2 bg-primaryBlue text-white hover:brightness-90"
         >
           Todo
         </Button>

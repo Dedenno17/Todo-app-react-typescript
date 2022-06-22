@@ -62,7 +62,7 @@ function NewTodo() {
       <div className="h-[30%] w-full">
         <button
           type="submit"
-          className="w-full h-full bg-primaryBlue text-white font-semibold font-sans text-md outline-none rounded-sm cursor-pointer"
+          className="w-full h-full bg-primaryBlue text-white font-semibold font-sans text-md outline-none rounded-sm cursor-pointer hover:brightness-90"
         >
           Add new task
         </button>

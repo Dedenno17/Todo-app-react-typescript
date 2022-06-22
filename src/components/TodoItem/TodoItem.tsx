@@ -52,7 +52,7 @@ const TodoItem: React.FC<{ title: string; id: string; isDone: boolean }> = (
             props.isDone ? "border-green-500" : "border-slate-700"
           } `}
         >
-          <div className="w-full h-full ">
+          <div className="w-full h-full">
             <img
               src={check}
               alt="check"
@@ -64,13 +64,15 @@ const TodoItem: React.FC<{ title: string; id: string; isDone: boolean }> = (
           <input
             onChange={checkHandler}
             type="checkbox"
-            className="w-5 h-5 absolute top-0 left-0 opacity-0"
+            className={`w-5 h-5 absolute top-0 left-0 opacity-0 ${
+              props.isDone ? "pointer-events-none" : "cursor-pointer"
+            }`}
           />
         </div>
         <img
           src={pen}
           alt="pen"
-          className={`w-[22%] h-full md:w-[15%] lg:w-[11%] ${
+          className={`w-[22%] h-full cursor-pointer md:w-[15%] lg:w-[11%] ${
             props.isDone ? "filter-grey pointer-events-none" : "filter-orange"
           } `}
           onClick={editTodoHandler}
@@ -78,7 +80,7 @@ const TodoItem: React.FC<{ title: string; id: string; isDone: boolean }> = (
         <img
           src={trash}
           alt="trash"
-          className="w-[22%] h-full filter-red md:w-[15%] lg:w-[11%]"
+          className="w-[22%] h-full filter-red cursor-pointer md:w-[15%] lg:w-[11%]"
           onClick={removeTodoHandler}
         />
       </div>

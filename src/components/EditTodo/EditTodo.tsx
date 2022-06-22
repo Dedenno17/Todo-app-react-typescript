@@ -40,14 +40,14 @@ const EditTodo: React.FC = (props) => {
         <Button
           type="button"
           onClick={cancelHandler}
-          className="w-[30%] py-1 border-[1px] border-primaryBlue bg-white text-primaryBlue"
+          className="w-[30%] py-1 border-[1px] border-primaryBlue bg-white text-primaryBlue hover:bg-primaryBlue hover:text-white hover:border-none"
         >
           Cancel
         </Button>
         <Button
           type="button"
           onClick={confirmHandler}
-          className="w-[30%] py-1 bg-primaryBlue ml-3 text-white"
+          className="w-[30%] py-1 bg-primaryBlue ml-3 text-white hover:brightness-75"
         >
           Confirm
         </Button>
