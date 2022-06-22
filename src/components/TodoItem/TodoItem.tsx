@@ -70,7 +70,7 @@ const TodoItem: React.FC<{ title: string; id: string; isDone: boolean }> = (
         <img
           src={pen}
           alt="pen"
-          className={`w-[22%] h-full ${
+          className={`w-[22%] h-full md:w-[15%] ${
             props.isDone ? "filter-grey pointer-events-none" : "filter-orange"
           } `}
           onClick={editTodoHandler}
@@ -78,7 +78,7 @@ const TodoItem: React.FC<{ title: string; id: string; isDone: boolean }> = (
         <img
           src={trash}
           alt="trash"
-          className="w-[22%] h-full filter-red"
+          className="w-[22%] h-full filter-red md:w-[15%]"
           onClick={removeTodoHandler}
         />
       </div>
