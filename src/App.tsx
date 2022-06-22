@@ -9,7 +9,7 @@ function App() {
   const isShowEdit = useAppSelector((state) => state.isShowEdit.value);
 
   return (
-    <div className="container mx-auto p-5">
+    <div className="max-w-[800px] mx-auto p-5">
       <h1 className="text-3xl font-sans font-bold text-slate-700 text-center mb-4">
         Todo App
       </h1>
