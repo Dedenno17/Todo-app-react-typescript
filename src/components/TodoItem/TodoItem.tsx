@@ -35,7 +35,7 @@ const TodoItem: React.FC<{ title: string; id: string; isDone: boolean }> = (
   return (
     <li
       id={props.id}
-      className="w-full p-3 rounded-sm border-[1px] border-slate-500 mb-4 flex items-center"
+      className="w-full p-3 rounded-sm border-[1px] border-slate-500 mb-4 flex justify-between items-center"
     >
       <div className="w-[70%] h-full flex items-center">
         <p
@@ -46,7 +46,7 @@ const TodoItem: React.FC<{ title: string; id: string; isDone: boolean }> = (
           {props.title}
         </p>
       </div>
-      <div className="w-[30%] h-full flex justify-between items-center">
+      <div className="w-[30%] h-full flex justify-between items-center lg:w-[20%]">
         <div
           className={`w-5 h-5 relative border-[1px] ${
             props.isDone ? "border-green-500" : "border-slate-700"
@@ -70,7 +70,7 @@ const TodoItem: React.FC<{ title: string; id: string; isDone: boolean }> = (
         <img
           src={pen}
           alt="pen"
-          className={`w-[22%] h-full md:w-[15%] ${
+          className={`w-[22%] h-full md:w-[15%] lg:w-[11%] ${
             props.isDone ? "filter-grey pointer-events-none" : "filter-orange"
           } `}
           onClick={editTodoHandler}
@@ -78,7 +78,7 @@ const TodoItem: React.FC<{ title: string; id: string; isDone: boolean }> = (
         <img
           src={trash}
           alt="trash"
-          className="w-[22%] h-full filter-red md:w-[15%]"
+          className="w-[22%] h-full filter-red md:w-[15%] lg:w-[11%]"
           onClick={removeTodoHandler}
         />
       </div>
