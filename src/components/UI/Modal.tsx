@@ -21,7 +21,7 @@ const ModalOverlay: React.FC = () => {
 };
 
 const ModalContent: React.FC<BaseLayout> = (props) => {
-  const classes = `${props.className} fixed w-3/4 top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 bg-white rounded-lg shadow-lg lg:w-1/2`;
+  const classes = `${props.className} fixed w-3/4 top-[20%] -translate-y-1/2 left-1/2 -translate-x-1/2 bg-white rounded-lg shadow-lg animate-goDown-in lg:w-1/2`;
 
   return <div className={classes}>{props.children}</div>;
 };
