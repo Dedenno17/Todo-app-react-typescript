@@ -1,11 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useAppSelector } from "../../app/hooks";
 
 import Button from "../UI/Button";
 import TodoItem from "../TodoItem/TodoItem";
 import Todos from "../../models/Todos";
 
-function TodoList() {
+const TodoList = () => {
   const todos = useAppSelector((state) => state.todos.value);
 
   const [enteredTodos, setEnteredTodos] = useState<Todos[]>(todos);
@@ -14,19 +14,21 @@ function TodoList() {
     setEnteredTodos(todos);
   }, [todos]);
 
-  const showAllHandler = () => {
+  const showAllHandler = useCallback(() => {
     setEnteredTodos(todos);
-  };
+  }, [todos]);
 
-  const showDoneHandler = () => {
+  const showDoneHandler = useCallback(() => {
     const newTodos: Todos[] = todos.filter((todo) => todo.isDone === true);
     setEnteredTodos(newTodos);
-  };
+  }, [todos]);
 
-  const showNotDoneYetHandler = () => {
+  const showNotDoneYetHandler = useCallback(() => {
     const newTodos: Todos[] = todos.filter((todo) => todo.isDone === false);
     setEnteredTodos(newTodos);
-  };
+  }, [todos]);
+
+  console.log("TodoList Rendering");
 
   return (
     <div className="w-full mt-5 p-2">
@@ -68,6 +70,6 @@ function TodoList() {
       </ul>
     </div>
   );
-}
+};
 
 export default TodoList;

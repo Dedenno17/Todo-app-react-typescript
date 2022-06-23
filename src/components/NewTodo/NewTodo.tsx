@@ -34,8 +34,6 @@ const NewTodo = React.memo(() => {
     inputRef.current!.value = "";
   };
 
-  console.log("NewTodo Rendering");
-
   return (
     <form
       className="w-full h-32 px-2 bg-white rounded-sm shadow-md mx-auto flex flex-col justify-evenly items-center lg:w-[500px]"
