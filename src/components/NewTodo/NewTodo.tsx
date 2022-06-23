@@ -5,7 +5,7 @@ import { todosActions } from "../../features/todos";
 import book from "../../assets/book-solid.svg";
 import Todos from "../../models/Todos";
 
-function NewTodo() {
+const NewTodo = React.memo(() => {
   const dispatch = useAppDispatch();
 
   const inputRef = useRef<HTMLInputElement>(null);
@@ -33,6 +33,8 @@ function NewTodo() {
     dispatch(todosActions.addTodo(newTodo));
     inputRef.current!.value = "";
   };
+
+  console.log("NewTodo Rendering");
 
   return (
     <form
@@ -69,6 +71,6 @@ function NewTodo() {
       </div>
     </form>
   );
-}
+});
 
 export default NewTodo;
