@@ -28,8 +28,6 @@ const TodoList = () => {
     setEnteredTodos(newTodos);
   }, [todos]);
 
-  console.log("TodoList Rendering");
-
   return (
     <div className="w-full mt-5 p-2">
       <h2 className="text-center text-xl font-bold text-slate-700 font-sans">
